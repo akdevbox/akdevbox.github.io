@@ -1,0 +1,89 @@
+.slideshow-container {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 0;
+    background-color: transparent;
+    display: flex; /* Use flexbox for vertical stacking of tracks */
+    flex-direction: column;
+}
+
+.slideshow-track {
+    display: flex; /* Use flexbox for horizontal items */
+    flex-wrap: nowrap; /* Ensure items stay on a single line */
+    animation: scroll-left 20s linear infinite; /* Default animation */
+    padding: 1em 0; /* Add some vertical padding between rows */
+    width: max-content; /* Ensure the track expands to fit all content */
+}
+
+.slideshow-track.track-2 {
+    animation: scroll-right 20s linear infinite; /* Different animation for the second track */
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%); /* Start from two-thirds to ensure seamless loop */
+    }
+    100% {
+        transform: translateX(0); /* Scrolls one-third of the track width */
+    }
+}
+
+.tech-item {
+    display: flex; /* Ensure tech items are also flex items for alignment */
+    align-items: center;
+    padding: 0 2em;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #888; /* Gray color for text */
+    flex-shrink: 0; /* Prevent items from shrinking */
+}
+
+.tech-item img {
+    height: 1.8em; /* Adjust icon size */
+    width: auto;
+    margin-right: 0.5em;
+    filter: invert(1) grayscale(1) brightness(0.5); /* Make the black SVG logos gray */
+}
+
+.light-theme .tech-item {
+    color: black;
+}
+
+.light-theme .tech-item img {
+    filter: invert(1) grayscale(1) brightness(0);
+}
+
+.slideshow-bg {
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    z-index: -1;
+    background-color: var(--background);
+    mask-image: linear-gradient(to top,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,1) 50%
+    );
+    -webkit-mask-image: linear-gradient(to top,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,1) 50%
+    );
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); 
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .tech-item {
+        padding: 0 1em;
+        font-size: 1.2em;
+    }
+}

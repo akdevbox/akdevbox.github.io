@@ -1,0 +1,21 @@
+body {
+    --background: #111;
+    --background-em: black;
+    --placeholder: #111;
+    --text: white;
+    --scroll-thumb: #333;
+    --scroll-thumb-hover: #555;
+    --blur-color: rgba(0, 0, 0, 50%);
+    --unhighlight-text: #666;
+    --spotify-background: #222; /* Dark mode Spotify background */
+}
+
+.light-theme {
+    --background: white;
+    --background-em: white;
+    --placeholder: #eee;
+    --text: black;
+    --blur-color: rgba(255, 255, 255, 80%);
+    --unhighlight-text: black;
+    --spotify-background: transparent; /* Light mode Spotify background (darker gray) */
+}

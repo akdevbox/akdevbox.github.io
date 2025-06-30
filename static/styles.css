@@ -1,0 +1,319 @@
+@import url('common.css');
+@import url('navbar.css');
+@import url('footer.css');
+@import url('car.css');
+@import url('polka-dot-background.css');
+
+.navbar-postpad {
+    height: 9em;
+}
+
+.title {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 4.5em;
+    /* Decreased from 5em */
+    padding: 0 2rem 4rem;
+    max-width: 900px;
+    transition: opacity 1s ease-out, filter 1s ease-out;
+    /* Add transition */
+}
+
+.title.initial-hidden {
+    opacity: 0;
+    filter: blur(10px);
+}
+
+.title.title-loaded {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.subtext {
+    font-size: 1.5rem;
+    /* Decreased from 1.7rem */
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+}
+
+.title-background {
+    width: 100%;
+    min-height: min-content;
+    background: var(--background-em);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.light-theme .monospace {
+    font-weight: 300;
+}
+
+.pic-img-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+}
+
+.pic-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.pic-parallax-reveal-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -10;
+}
+
+.field-specifier {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: calc(100vw * 0.04);
+    margin: 0.5em 0;
+    align-content: center;
+    text-align: center;
+}
+
+.field-specifier>span {
+    text-wrap: nowrap;
+}
+
+a:has(.spotify_wrapped) {
+    flex: 1;
+}
+
+.spotify_wrapped {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.spotify_wrapped_container {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    color: var(--text);
+    /* Use text variable */
+    background-color: var(--spotify-background);
+    /* Use Spotify background variable */
+    padding: 1rem;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    /* Decreased from 1.3rem */
+}
+
+.spotify_wrapped_container2 {
+    width: 100%;
+    padding: 0.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spotify_embeds_container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 0.5em;
+    margin-top: 5em;
+}
+
+.spotify_wrapped_arrow {
+    width: 5rem;
+    rotate: 110deg;
+}
+
+.light-theme .spotify_wrapped_arrow {
+    filter: invert(1);
+}
+
+.spotify_wrapped_label_inner {
+    position: absolute;
+    top: -1rem;
+    font-size: 1.3rem;
+    /* Decreased from 1.5rem */
+    rotate: -10deg;
+    left: 5.5rem;
+    text-wrap: nowrap;
+    text-align: center;
+}
+
+.spotify_wrapped_label {
+    position: absolute;
+    left: calc(50% - 2rem);
+    top: 15%;
+}
+
+.grid-container-1 {
+    display: grid;
+    row-gap: 0.2em;
+    column-gap: 0.5em;
+    grid-template-columns: repeat(auto-fill, minmax(min(18.75rem, 100%), 1fr));
+    /* Converted 300px to 18.75rem */
+    grid-template-rows: auto;
+}
+
+.icon-header {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 3.5em;
+    /* Decreased from 4em */
+}
+
+.embed-img {
+    width: 100%;
+    /* filter: brightness(200%) contrast(114%) grayscale(100%); Removed grayscale */
+}
+
+.light-theme .embed-img {
+    filter: contrast(130%) invert(100%) hue-rotate(180deg);
+}
+
+.show-portrait-flex {
+    display: none;
+}
+
+.text-content {
+    font-size: 1.1em;
+    /* Decreased from 1.3em */
+    line-height: 1.5;
+}
+
+p {
+    margin-bottom: 1.5em;
+    text-align: justify;
+}
+
+.general-quote-container {
+    position: relative;
+    margin: 3em auto;
+    padding: 0 2em;
+    max-width: 800px;
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+    color: var(--text);
+}
+
+.general-quote {
+    margin-bottom: 0.5em;
+    quotes: "“" "”" "‘" "’";
+    line-height: 1.5;
+    /* Increased line-height to prevent overlap */
+}
+
+.general-quote::before {
+    content: open-quote;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.1em;
+    vertical-align: -0.4em;
+    font-weight: 300;
+}
+
+.general-quote::after {
+    content: close-quote;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-left: 0.1em;
+    vertical-align: -0.4em;
+    font-weight: 300;
+}
+
+.general-attribution {
+    position: relative;
+    bottom: 1em;
+    text-align: right;
+    font-size: 0.7em;
+    margin-top: 1em;
+    font-style: normal;
+}
+
+/* For mobile screens */
+@media screen and (max-width: 600px) {
+    .general-quote-container {
+        padding: 0 0.5em;
+    }
+
+    .field-specifier>span {
+        text-align: center;
+    }
+
+    .hide-portrait {
+        display: none !important;
+    }
+
+    .show-portrait-flex {
+        display: flex;
+    }
+
+    .field-specifier {
+        flex-flow: column;
+        font-size: calc(250vw * 0.04);
+    }
+
+    #field-specifier-changing {
+        height: calc(250vw * 0.04);
+        margin-bottom: 1em;
+    }
+
+    .spotify_wrapped_container {
+        flex-direction: column;
+        margin-top: 10rem;
+    }
+
+    .spotify_wrapped_label {
+        rotate: -50deg;
+        top: 0;
+    }
+
+    .spotify_wrapped_container2 {
+        padding: 1rem 0.5rem;
+        box-sizing: border-box;
+    }
+}
+
+/* text justify or not */
+@media screen and (max-width: 670px) {
+    p {
+        text-align: left;
+    }
+}
+
+/* Max widht 900px is set on cotent-centric */
+@media screen and (min-width: 900px) {
+    .field-specifier {
+        font-size: calc(56.25rem * 0.04);
+    }
+}
+
+/* For huge screens */
+@media screen and (min-width: 1200px) {
+    .title {
+        font-size: 8em;
+        /* Decreased from 9em */
+        width: max-content;
+        max-width: unset;
+    }
+
+    .subtext {
+        font-size: 1.8rem;
+        /* Decreased from 2rem */
+    }
+
+    .content-centric {
+        font-size: 1.3rem;
+        /* Decreased from 1.5rem */
+    }
+}
