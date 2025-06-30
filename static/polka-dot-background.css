@@ -1,0 +1,58 @@
+.polka-dot-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.polka-dot-background {
+    position: absolute;
+    /* top: calc(var(--scrolly) * -0.4px); */
+    width: 100%;
+    height: 200%;
+    z-index: -11;
+    background-position-x: calc(sin(var(--time) * pi / 360) * 100px);
+    background-position-y: calc(cos(var(--time) * 1.2 * pi / 360) * 150px);
+    background-image: radial-gradient(circle, var(--text) 1px, rgba(255, 255, 255, 0) 1px);
+    background-size: 20px 20px;
+    /* Adjust dot size and spacing as needed */
+    mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) 100%);
+}
+
+@media screen and (min-width: 900px) {
+    .polka-dot-background {
+        mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0) 15%,
+                rgba(0, 0, 0, 0) 85%,
+                rgba(0, 0, 0, 0.6) 100%);
+        -webkit-mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0) 10%,
+                rgba(0, 0, 0, 0) 90%,
+                rgba(0, 0, 0, 0.6) 100%);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .polka-dot-background {
+        mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0) 25%,
+                rgba(0, 0, 0, 0) 75%,
+                rgba(0, 0, 0, 0.6) 100%);
+        -webkit-mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0) 25%,
+                rgba(0, 0, 0, 0) 75%,
+                rgba(0, 0, 0, 0.6) 100%);
+    }
+}

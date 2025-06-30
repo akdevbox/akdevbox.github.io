@@ -1,0 +1,89 @@
+#car-img #bikeframe {
+    width: 100vh;
+}
+
+#tyre-rear,
+#tyre-front {
+    position: absolute;
+    z-index: -1;
+}
+
+#tyre-rear {
+    width: 30vh;
+    top: 41vh;
+    left: 4.8vh;
+}
+
+#tyre-front {
+    width: 33vh;
+    top: 39.8vh;
+    right: -8vh;
+}
+
+#car-img-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /*
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    */
+}
+
+#car-anim {
+    left: 0;
+    position: relative;
+    width: 100vh;
+}
+
+.car-bg {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    z-index: -2;
+    background-color: var(--background);
+    mask-image: linear-gradient(to top,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 80%,
+            rgba(0, 0, 0, 0) 100%),
+        linear-gradient(to right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 80%,
+            rgba(0, 0, 0, 0) 100%);
+    mask-composite: intersect;
+    /* -webkit-mask-image: linear-gradient(to top,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 50%); */
+}
+
+#car-desc {
+    position: absolute;
+    right: 55%;
+    top: 38%;
+    text-align: right;
+    transform: translateY(-60%);
+    transition: opacity 0.1s;
+}
+
+.sizeholder {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#car-title,
+#car-subtitle {
+    font-family: 'Indie Flower';
+    font-size: 1.5em;
+}
+
+@media screen and (max-width: 500px) {
+
+    #car-title,
+    #car-subtitle {
+        font-size: 1.2em;
+    }
+}
